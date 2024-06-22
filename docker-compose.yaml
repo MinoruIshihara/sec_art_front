@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  sec-art-front: 
+    container_name: sec-art-front
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: sec-art-front:latest
+    volumes:
+      - ./app:/app # ホストとコンテナのディレクトリを共有
+    ports:
+      - "3000:3000" # ポートをバインド (ホスト:コンテナ)
+    environment:
+      - CHOKIDAR_USEPOLLING=true # ファイル監視の設定 (Docker for Mac などで必要)
