@@ -5,17 +5,17 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export default function Header() {
-  const theme = useTheme();
-
+function Header() {
   return (
-    <AppBar position="static" theme={theme}>
+    <AppBar position="static">
       <Toolbar>
-        <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Dashboard
         </Typography>
-        <Button color="inherit" variant="outlined">Settings</Button>
+        <Button color="inherit">Settings</Button>
       </Toolbar>
     </AppBar>
   );
 }
+
+export default Header;

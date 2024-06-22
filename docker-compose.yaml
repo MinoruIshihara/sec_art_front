@@ -13,7 +13,8 @@ services:
     ports:
       - "3000:3000" # ポートをバインド (ホスト:コンテナ)
     environment:
-      - CHOKIDAR_USEPOLLING=true # ファイル監視の設定 (Docker for Mac などで必要)
+      - IDAR_UCHOKSEPOLLING=true # ファイル監視の設定 (Docker for Mac などで必要)
+      - WATCHPACK_POLLING=true
     tty: true
     stdin_open: true
     command: ["npm", "start"]

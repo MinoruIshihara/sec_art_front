@@ -1,29 +1,34 @@
-import './App.css';
-import { useState } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Header from './components/Header'
-import ContentTabs from './components/ContentTabs';
-import Sidebar from './components/Sidebar';
-import { Grid, Box, Button } from '@mui/material';
+import "./App.css";
+import { useState } from "react";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import Header from "./components/Header";
+import ContentGrid from "./components/ContentGrid";
+import Sidebar from "./components/Sidebar";
+import { Box, CssBaseline, Grid, Button } from "@mui/material";
 
 const theme = createTheme();
 
 function App() {
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+    },
+  });
+
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Box sx={{ display: 'block' }}>
-          <Grid container>
-            <Grid item xs={1}>
-              <Sidebar theme={theme}/>
-            </Grid>
-            <Grid item xs="auto">
-              <Header />
-              <ContentTabs />
-            </Grid>
-          </Grid>
+    <ThemeProvider theme={darkTheme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Sidebar />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Header />
+          <Box
+            sx={{ width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <ContentGrid />
+          </Box>
         </Box>
-      </div>
+      </Box>
     </ThemeProvider>
   );
 }
