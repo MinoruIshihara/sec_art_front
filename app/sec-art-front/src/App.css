@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiGrid-item {
+  width: 200px; /* または希望の幅 */
+}
