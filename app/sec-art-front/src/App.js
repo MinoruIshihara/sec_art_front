@@ -1,12 +1,9 @@
 import "./App.css";
-import { useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./components/Header";
 import ContentGrid from "./components/ContentGrid";
 import Sidebar from "./components/Sidebar";
-import { Box, CssBaseline, Grid, Button } from "@mui/material";
-
-const theme = createTheme();
+import { Box, CssBaseline } from "@mui/material";
 
 function App() {
   const darkTheme = createTheme({
